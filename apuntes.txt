@@ -1,0 +1,12 @@
+--Ruta de archivos usados en el curso
+https://github.com/ricardoandre97/k8s-resources
+
+--Tener instalado previamente docker y kubectl y minube
+--Ver status de minikube
+minikube status
+
+--Iniciar minikube
+minikube start
+
+--Detener minikube
+minikube stop

@@ -10,3 +10,105 @@ minikube start
 
 --Detener minikube
 minikube stop
+
+DOCKER_HOST=tcp://localhost:2375
+C:\bin
+https://dev.to/_nicolas_louis_/how-to-run-docker-on-windows-without-docker-desktop-hik
+
+--version de ubuntu 
+lsb_release -a
+
+--Ver lista de mv disponibles
+wsl --list --online
+
+--Instalar distribucion especifica
+wsl --install --distribution <Distribution Name>
+wsl --install --distribution Ubuntu
+
+--Ver lista de mv instaladas
+wsl --list --verbose
+
+--Ejecutar distribucion 
+wsl --distribution <Distribution Name>
+
+--Borrar distribucion instalada
+wsl --unregister <distro name>
+
+--status de wsl
+wsl --status
+
+--detener ejecucion mv wsl
+wsl --terminate <Distribution Name>
+
+--Apágar todas las MV y entorno de wsl
+wsl --shutdown
+
+--Levantar docker
+dockerd
+
+
+sudo apt-get install curl
+sudo apt-get install apt-transport-https
+
+
+curl -LO https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64
+sudo install minikube-linux-amd64 /usr/local/bin/minikube
+
+curl -LO https://storage.googleapis.com/kubernetes-release/release/`curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt`/bin/linux/amd64/kubectl
+
+
+--Instalar docker en ubuntu 
+sudo apt install apt-transport-https ca-certificates curl software-properties-common
+
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+
+sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu focal stable"
+
+sudo apt update
+
+apt-cache policy docker-ce
+
+sudo usermod -aG docker $USER
+su - $USER
+id -nG
+
+sudo service docker start
+sudo service docker stop
+docker run hello-world
+
+docker search ubuntu
+
+--instalar minikube https://minikube.sigs.k8s.io/docs/start/
+curl -LO https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64
+sudo install minikube-linux-amd64 /usr/local/bin/minikube
+
+minikube start
+minikube pause
+minikube unpause
+minikube stop
+alias kubectl="minikube kubectl --"
+http://127.0.0.1:44909/api/v1/namespaces/kubernetes-dashboard/services/http:kubernetes-dashboard:/proxy/#/workloads?namespace=default
+
+==================
+--PODS------------
+==================
+--ver recursos de k8s
+kubectl api-resources
+
+--ver lista de pods 
+kubectl get pods
+
+--obtener ayudar kubectl run
+kubectl run --help
+
+--crear pod por comando
+kubectl run --generator=run-pod/v1 <<pod_name>> --image=<<imagen_name:version>>
+kubectl run --generator=run-pod/v1 podtest --image=nginx:alpine
+kubectl run <<pod_name>> --image=<<imagen_name:version>>
+kubectl run podtest --image=nginx:alpine
+
+--ver log de pod mientras se crea
+kubectl describe <<pod_name>>
+
+--borrar pod en K8S
+kubectl delete pod <<pod_name1>> <<pod_name2>> ...<<pod_name3>>

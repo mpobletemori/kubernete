@@ -98,6 +98,9 @@ kubectl api-resources
 --ver lista de pods 
 kubectl get pods
 
+--ver lista de pods con formato yaml (formato como se creó el pod)
+kubectl get pods -o yaml
+
 --obtener ayudar kubectl run
 kubectl run --help
 
@@ -108,7 +111,20 @@ kubectl run <<pod_name>> --image=<<imagen_name:version>>
 kubectl run podtest --image=nginx:alpine
 
 --ver log de pod mientras se crea
+kubectl describe --help
 kubectl describe <<pod_name>>
+kubectl describe pod/<<pod_name>>
 
 --borrar pod en K8S
 kubectl delete pod <<pod_name1>> <<pod_name2>> ...<<pod_name3>>
+
+--En caso no se vea un pod
+Si creaste tu cluster con algún driver como VirtualBox o HyperV, quizás no puedas 
+ver la IP del pod debido a que se encuentran en una máquina distinta a tu localhost, 
+por tanto no tienes acceso a estas IPs locales.
+
+Para solucioarlo, puedes ejecutar este comando:
+
+kubectl port-forward <pod-name> 7000:<pod-port>
+
+Luego, solo vas a http://localhost:7000 y deberías ver tu pod!

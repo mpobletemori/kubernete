@@ -101,6 +101,10 @@ kubectl get pods
 --ver lista de pods con formato yaml (formato como se creó el pod)
 kubectl get pods -o yaml
 
+--ver detalle de pod en formato yaml
+kubectl get pod <<pod_name>> -o yaml
+kubectl get pod podtest -o yaml
+
 --obtener ayudar kubectl run
 kubectl run --help
 
@@ -128,3 +132,32 @@ Para solucioarlo, puedes ejecutar este comando:
 kubectl port-forward <pod-name> 7000:<pod-port>
 
 Luego, solo vas a http://localhost:7000 y deberías ver tu pod!
+
+--Ingresar a consola de pod
+kubectl exec -it <<pod_name>> -- sh
+kubectl exec -it podtest -- sh
+
+--Ver logs de un pod
+kubectl logs <<pod_name>>
+kubectl logs podtest
+
+--Ver logs de un pod en modo interactivo (para revisar por que no funciona un pod)
+kubectl logs <<pod_name>> -f
+kubectl logs podtest -f
+
+--Manifiestos en k8s 
+-Se detalle todo lo que se requiere para levantar un pod
+-obtener version de servicios de k8s que ira en tag apiVersion
+kubectl api-versions
+-obtener componente ira en tag Kind
+kubectl api-resources | grep "Pod"
+-Levantar un pod mediante fichero yaml
+kubectl apply -f <<nombre_fichero>>
+kubectl apply -f pod.yaml
+--Borrar pod declarado en fichero yaml
+kubectl delete -f <<nombre_fichero>>
+kubectl delete -f pod.yaml
+
+
+
+

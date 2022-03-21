@@ -110,10 +110,6 @@ kubectl get pods -o yaml
 kubectl get pod <<pod_name>> -o yaml
 kubectl get pod podtest -o yaml
 
---ver detalle de pod filtrarlo por label
-kubectl get pods -l <<key1>>=<<value1>> 
-kubectl get pods -l app=backend
-
 --obtener ayudar kubectl run
 kubectl run --help
 

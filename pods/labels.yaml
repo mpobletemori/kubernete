@@ -1,0 +1,53 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  #nombre de pod
+  name: podtest2
+  #creacion de (metadata) labels para identificar recursos
+  labels:
+    #son valor arbitrarios
+    app: front
+    env: dev
+spec:
+  #detalle de contenedores que tendra el pod
+  containers:
+    #nombre de contenedor
+  - name: contenedor1
+    #nombre de imagen docker a usar
+    image: nginx:alpine
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  #nombre de pod
+  name: podtest3
+  #creacion de (metadata) labels para identificar recursos
+  labels:
+    #son valores arbitrarios
+    app: backend
+    env: dev
+spec:
+  #detalle de contenedores que tendra el pod
+  containers:
+    #nombre de contenedor
+  - name: contenedor1
+    #nombre de imagen docker a usar
+    image: nginx:alpine
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  #nombre de pod
+  name: podtest4
+  #creacion de (metadata) labels para identificar recursos
+  labels:
+    #son valores arbitrarios
+    app: backend
+    env: dev
+spec:
+  #detalle de contenedores que tendra el pod
+  containers:
+    #nombre de contenedor
+  - name: contenedor1
+    #nombre de imagen docker a usar
+    image: nginx:alpine

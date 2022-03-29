@@ -1,0 +1,35 @@
+##Inicio de datos de replicaSet
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  #nombre de replicasSet
+  name: rs-test
+  #label de replicaSet
+  labels:
+    app: rs-test
+#Especificaciones de replicaSet
+spec:
+  replicas: 5
+  #Selectors indica que pods asociar en replicaSet por su label
+  selector:    
+    matchLabels:
+      #en este caso es los pods que tengan como key=app,value=pod-label
+      app: pod-label
+##Fin de datos de replicaSet
+##Inicio de Datos de pod
+  template:
+    #Metadata de pods
+    metadata:
+      labels:
+        app: pod-label
+      #Especificacion de pod
+    spec:
+      containers:
+      - name: cont1
+        image: python:3.6-alpine
+        command: ['sh','-c','echo cont1 > index.html && python -m http.server 8082']
+
+      - name: cont2
+        image: python:3.6-alpine
+        command: ['sh','-c','echo cont2 > index.html && python -m http.server 8083']
+##Fin de Datos de pod

@@ -199,6 +199,21 @@ kubectl describe rs <<nombre_replicaSet>>
 --Ver detalle de replicaSet en formato yaml
 kubectl describe rs <<nombre_replicaSet>> -o yaml
 
+--Ver lista de deployment
+kubectl get deployment
+
+--Ver lista de deployment y sus labels
+kubectl get deployment --show-labels
+
+--Ver detalle de deployment
+kubectl describe deployment <<nombre_deployment>>
+
+--Ver detalle de deployment en formato yaml
+kubectl describe deployment <<nombre_deployment>> -o yaml
+
+--Ver el status de un deployment
+kubectl rollout status deployment <<nombre_deployment>>
+
 
 
 

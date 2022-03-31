@@ -190,6 +190,18 @@ python -m http.server 8081
 -instalar curl dentro de pod
 apk add -U curl
 
+--Ver lista de replicaSet
+kubectl get rs 
+
+--Ver detalle de replicaSet
+kubectl describe rs <<nombre_replicaSet>>
+
+--Ver detalle de replicaSet en formato yaml
+kubectl describe rs <<nombre_replicaSet>> -o yaml
+
+
+
+
 
 
 

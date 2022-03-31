@@ -214,6 +214,9 @@ kubectl describe deployment <<nombre_deployment>> -o yaml
 --Ver el status de un deployment
 kubectl rollout status deployment <<nombre_deployment>>
 
+--Ver historico de deployments
+kubectl rollout history deployment <<nombre_deployment>>
+
 
 
 
